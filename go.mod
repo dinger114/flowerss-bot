@@ -3,7 +3,7 @@ module github.com/indes/flowerss-bot
 go 1.24.0
 
 require (
-	github.com/go-sql-driver/mysql v1.9.3
+	github.com/go-sql-driver/mysql v1.10.0
 	github.com/golang/mock v1.6.0
 	github.com/grokify/html-strip-tags-go v0.1.0
 	github.com/indes/telegraph-go v1.0.1
@@ -21,7 +21,7 @@ require (
 )
 
 require (
-	filippo.io/edwards25519 v1.1.0 // indirect
+	filippo.io/edwards25519 v1.2.0 // indirect
 	github.com/PuerkitoBio/goquery v1.11.0 // indirect
 	github.com/andybalholm/cascadia v1.3.3 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
