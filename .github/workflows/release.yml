@@ -14,16 +14,16 @@ jobs:
         goarch: ["386", amd64]
 
     steps:
-      - uses: actions/checkout@v4
-      
+      - uses: actions/checkout@v7
+
       - name: Set APP_VERSION env
-        run: echo ::`echo -n name=APP_VERSION`::$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev )
+        run: echo "APP_VERSION=$(echo ${GITHUB_REF} | rev | cut -d'/' -f 1 | rev)" >> $GITHUB_ENV
       - name: Set BUILD_TIME env
-        run: echo ::`echo -n name=BUILD_TIME`::$(date)
+        run: echo "BUILD_TIME=$(date)" >> $GITHUB_ENV
       - name: Environment Printer
         uses: managedkaos/print-env@v1.0
 
-      - uses: wangyoucao577/go-release-action@master
+      - uses: wangyoucao577/go-release-action@v1.55
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           goos: ${{ matrix.goos }}
