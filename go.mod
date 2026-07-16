@@ -14,7 +14,7 @@ require (
 	go.uber.org/atomic v1.11.0
 	go.uber.org/zap v1.25.0
 	google.golang.org/protobuf v1.31.0
-	gopkg.in/telebot.v3 v3.2.1
+	gopkg.in/telebot.v3 v3.3.8
 	gorm.io/driver/mysql v1.5.2
 	gorm.io/driver/sqlite v1.5.6
 	gorm.io/gorm v1.25.7-0.20240204074919-46816ad31dde
