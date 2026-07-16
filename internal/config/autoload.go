@@ -119,7 +119,6 @@ func init() {
 		mysqlConfig = mysql.NewConfig()
 		mysqlConfig.Net = "tcp"
 		mysqlConfig.Addr = fmt.Sprintf("%s:%d", viper.GetString("mysql.host"), viper.GetInt("mysql.port"))
-		mysqlConfig.Passwd = viper.GetString("mysql.host")
 		mysqlConfig.User = viper.GetString("mysql.user")
 		mysqlConfig.Passwd = viper.GetString("mysql.password")
 		mysqlConfig.DBName = viper.GetString("mysql.database")
