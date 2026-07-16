@@ -16,20 +16,25 @@ func main() {
 	if err := appCore.Init(); err != nil {
 		log.Fatal(err)
 	}
-	go handleSignal()
+	
 	b := bot.NewBot(appCore)
-
 	task := scheduler.NewRssTask(appCore)
 	task.Register(b)
 	task.Start()
-	b.Run()
+	
+	go func() {
+		b.Run()
+	}()
+	
+	handleSignal()
 }
 
 func handleSignal() {
-	c := make(chan os.Signal)
-	signal.Notify(c, os.Interrupt, os.Kill, syscall.SIGINT, syscall.SIGQUIT, syscall.SIGTERM)
-
+	c := make(chan os.Signal, 1)
+	signal.Notify(c, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
+	
 	<-c
-
+	
+	log.Info("Shutting down...")
 	os.Exit(0)
 }
