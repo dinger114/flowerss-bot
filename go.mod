@@ -3,7 +3,7 @@ module github.com/indes/flowerss-bot
 go 1.25.0
 
 require (
-	github.com/go-sql-driver/mysql v1.10.0
+	github.com/go-sql-driver/mysql v1.10.1
 	github.com/golang/mock v1.6.0
 	github.com/grokify/html-strip-tags-go v0.1.0
 	github.com/indes/telegraph-go v1.0.1
